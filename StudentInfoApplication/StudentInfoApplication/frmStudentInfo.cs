@@ -23,35 +23,12 @@ namespace StudentInfoApplication
             InitializeComponent();
         }
 
-        public frmStudentInfo(string studentId, string lastname, string firstname)
-        {
-            this.studentId = studentId;
-            this.lastname = lastname;
-            this.firstname = firstname;
-        }
-
-        public String StudentID
-        {
-            get { return this.studentId; } 
-            set { this.studentId = value; }
-        }
-
-        public String LastName
-        {
-            get { return this.lastname; }
-            set { this.lastname = value; }
-        }
-
-        public String FirstName
-        {
-            get { return this.firstname; }
-            set { this.firstname = value; }
-        }
+        
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
 
-            frmStudentInfo std = new frmStudentInfo(
+            StudentInfo std = new StudentInfo(
                 textboxstdID.Text, textboxLN.Text, textboxFN.Text
                 );
 
@@ -66,9 +43,9 @@ namespace StudentInfoApplication
                 return;
             } else
             {
-                listBox1.Items.Add(std.studentId);
-                listBox2.Items.Add(std.firstname);
-                listBox3.Items.Add(std.lastname);
+                listBox1.Items.Add(std.StudentID);
+                listBox2.Items.Add(std.FirstName);
+                listBox3.Items.Add(std.LastName);
             }
 
         }
